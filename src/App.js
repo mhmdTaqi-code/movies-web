@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 import MovieNavbar from "./components/MovieNavbar";
@@ -35,23 +35,21 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <BrowserRouter>
-        <MovieNavbar onSearch={searchMovies} />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <MovieList
-                movies={movies}
-                onPageChange={fetchMovies}
-                pageCount={pageCount}
-              />
-            }
-          />
-          <Route path="/movie/:id" element={<MovieDetails />} />
-        </Routes>
-      </BrowserRouter>
+    <div style={{ backgroundColor: " 	#252526 " }} className="App">
+      <MovieNavbar onSearch={searchMovies} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MovieList
+              movies={movies}
+              onPageChange={fetchMovies}
+              pageCount={pageCount}
+            />
+          }
+        />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+      </Routes>
     </div>
   );
 }

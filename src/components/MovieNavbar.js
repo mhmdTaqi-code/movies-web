@@ -1,18 +1,24 @@
 import React from "react";
-import { Navbar, Container, Nav, Form, FormControl } from "react-bootstrap";
+import { Navbar, Container, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const MovieNavbar = ({ onSearch }) => {
   return (
-    <Navbar expand="lg" className="custom-navbar">
+    <Navbar
+      style={{ backgroundColor: "	#3e3e42" }}
+      expand="lg"
+      className="custom-navbar"
+    >
       <Container>
         <Navbar.Brand as={Link} to="/" className="fw-bold text-white">
           🎬 موقع محمد تقي للأفلام
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-nav" />
+        <Navbar.Toggle
+          style={{ backgroundColor: "rgb(219, 219, 227)" }}
+          aria-controls="navbar-nav"
+        />
         <Navbar.Collapse id="navbar-nav">
-          <Nav className="ms-auto"></Nav>
-          <Form className="d-flex ms-3">
+          <Form className="d-flex ms-auto">
             <FormControl
               type="search"
               placeholder="ابحث عن فيلم..."
